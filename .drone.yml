@@ -1,0 +1,33 @@
+##use microsoft/dotnet:sdk image for .net framework
+##use mcr.microsoft.com/dotnet/core/sdk:3.0 for .net core image
+kind: pipeline
+type: docker
+name: Pull Request
+
+steps:    
+  - name: update appsettings
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    environment:
+      username:
+        from_secret: USERNAME
+      password:
+        from_secret: PASSWORD
+      securityToken:
+        from_secret: SECURITY_TOKEN
+    commands:
+      - apt-get update -y
+      - apt-get upgrade -y
+      - apt-get install jq -y
+      - touch temp.json
+      - cp /drone/src/DotNetWebApp_Drone_CICD/appsettings.json temp.json
+      - jq --arg username $username --arg password $password --arg securityToken $securityToken --arg Environment "" '.UserLogin.username = $username | .UserLogin.password = $password | .UserLogin.securityToken = $securityToken | .Environment = ""' temp.json >/drone/src/DotNetWebApp_Drone_CICD/appsettings.json
+      - rm temp.json
+  
+  - name: check appsettings
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    commands:
+      - cat /drone/src/DotNetWebApp_Drone_CICD/appsettings.json
+      
+trigger:
+  branch:
+    - develop

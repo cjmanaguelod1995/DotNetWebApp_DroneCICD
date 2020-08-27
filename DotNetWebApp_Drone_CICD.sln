@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetWebApp_Drone_CICD", "DotNetWebApp_Drone_CICD\DotNetWebApp_Drone_CICD.csproj", "{470D477C-B89B-4329-9320-07A15C15C435}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{470D477C-B89B-4329-9320-07A15C15C435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470D477C-B89B-4329-9320-07A15C15C435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470D477C-B89B-4329-9320-07A15C15C435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470D477C-B89B-4329-9320-07A15C15C435}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF837F71-3201-47D9-8EB6-47C5F7C563D4}
+	EndGlobalSection
+EndGlobal
